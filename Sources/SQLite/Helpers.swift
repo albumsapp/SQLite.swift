@@ -22,15 +22,7 @@
 // THE SOFTWARE.
 //
 
-#if SQLITE_SWIFT_STANDALONE
-import sqlite3
-#elseif SQLITE_SWIFT_SQLCIPHER
 import SQLCipher
-#elseif os(Linux)
-import CSQLite
-#else
-import SQLite3
-#endif
 
 public typealias Star = (Expression<Binding>?, Expression<Binding>?) -> Expression<Void>
 

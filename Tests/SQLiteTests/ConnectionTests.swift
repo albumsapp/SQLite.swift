@@ -3,15 +3,8 @@ import Foundation
 import Dispatch
 @testable import SQLite
 
-#if SQLITE_SWIFT_STANDALONE
-import sqlite3
-#elseif SQLITE_SWIFT_SQLCIPHER
+
 import SQLCipher
-#elseif os(Linux)
-import CSQLite
-#else
-import SQLite3
-#endif
 
 class ConnectionTests : SQLiteTestCase {
 
