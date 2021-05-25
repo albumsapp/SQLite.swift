@@ -1,6 +1,7 @@
 import XCTest
 @testable import SQLite
 
+// swiftlint:disable all
 class RowTests : XCTestCase {
 
     public func test_get_value() {

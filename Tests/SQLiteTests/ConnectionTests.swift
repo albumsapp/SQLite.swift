@@ -3,7 +3,7 @@ import Foundation
 import Dispatch
 @testable import SQLite
 
-
+// swiftlint:disable all
 import SQLCipher
 
 class ConnectionTests : SQLiteTestCase {

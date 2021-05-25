@@ -2,6 +2,7 @@ import XCTest
 import SQLCipher
 @testable import SQLite
 
+// swiftlint:disable all
 class QueryTests : XCTestCase {
 
     let users = Table("users")

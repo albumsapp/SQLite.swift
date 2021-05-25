@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class StatementTests : SQLiteTestCase {
     override func setUp() {
         super.setUp()

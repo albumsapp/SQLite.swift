@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class CustomFunctionNoArgsTests : SQLiteTestCase {
     typealias FunctionNoOptional              = ()  -> Expression<String>
     typealias FunctionResultOptional          = ()  -> Expression<String?>

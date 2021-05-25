@@ -1,5 +1,6 @@
 import SQLite
 
+// swiftlint:disable all
 let db = try! Connection()
 
 db.trace { print($0) }

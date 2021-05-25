@@ -24,6 +24,8 @@
 
 import SQLCipher
 
+// swiftlint:disable all
+
 /// A single SQL statement.
 public final class Statement {
 

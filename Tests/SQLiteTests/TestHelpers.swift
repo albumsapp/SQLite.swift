@@ -1,6 +1,7 @@
 import XCTest
 @testable import SQLite
 
+// swiftlint:disable all
 class SQLiteTestCase : XCTestCase {
     private var trace:[String: Int]!
     var db:Connection!

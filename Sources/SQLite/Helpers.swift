@@ -24,6 +24,7 @@
 
 import SQLCipher
 
+// swiftlint:disable all
 public typealias Star = (Expression<Binding>?, Expression<Binding>?) -> Expression<Void>
 
 public func *(_: Expression<Binding>?, _: Expression<Binding>?) -> Expression<Void> {
