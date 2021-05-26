@@ -26,6 +26,8 @@ import Foundation
 import Dispatch
 import SQLCipher
 
+// swiftlint:disable all
+
 /// A connection to SQLite.
 public final class Connection {
     

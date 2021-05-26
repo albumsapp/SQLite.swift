@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class FTS4Tests : XCTestCase {
 
     func test_create_onVirtualTable_withFTS4_compilesCreateVirtualTableExpression() {

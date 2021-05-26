@@ -22,6 +22,8 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
+
 public extension Connection {
 
     /// Creates or redefines a custom SQL function.

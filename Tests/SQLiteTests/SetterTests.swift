@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class SetterTests : XCTestCase {
 
     func test_setterAssignmentOperator_buildsSetter() {

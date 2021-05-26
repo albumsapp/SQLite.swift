@@ -22,6 +22,7 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
 // TODO: use `@warn_unused_result` by the time operator functions support it
 
 private enum Operator: String {

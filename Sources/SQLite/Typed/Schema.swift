@@ -22,6 +22,8 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
+
 extension SchemaType {
 
     // MARK: - DROP TABLE / VIEW / VIRTUAL TABLE

@@ -22,11 +22,16 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
+
 /// - Warning: `Binding` is a protocol that SQLite.swift uses internally to
 ///   directly map SQLite types to Swift types.
 ///
 ///   Do not conform custom types to the Binding protocol. See the `Value`
 ///   protocol, instead.
+
+// swiftlint:disable all
+
 public protocol Binding {}
 
 public protocol Number : Binding {}

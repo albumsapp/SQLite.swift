@@ -22,6 +22,8 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
+
 extension Module {
 
     public static func FTS4(_ column: Expressible, _ more: Expressible...) -> Module {
