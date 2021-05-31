@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class OperatorsTests : XCTestCase {
 
     func test_stringExpressionPlusStringExpression_buildsConcatenatingStringExpression() {

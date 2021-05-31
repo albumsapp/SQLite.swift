@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class FoundationTests : XCTestCase {
     func testDataFromBlob() {
         let data = Data([1, 2, 3])
