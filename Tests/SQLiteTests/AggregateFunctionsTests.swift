@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class AggregateFunctionsTests : XCTestCase {
 
     func test_distinct_prependsExpressionsWithDistinctKeyword() {

@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class BlobTests : XCTestCase {
 
     func test_toHex() {

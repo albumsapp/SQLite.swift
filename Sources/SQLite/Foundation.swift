@@ -22,6 +22,7 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
 import Foundation
 
 extension Data : Value {

@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class SchemaTests : XCTestCase {
 
     func test_drop_compilesDropTableExpression() {

@@ -22,6 +22,8 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
+
 /// A collating function used to compare to strings.
 ///
 /// - SeeAlso: <https://www.sqlite.org/datatype3.html#collation>

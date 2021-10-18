@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class FTS5Tests: XCTestCase {
     var config: FTS5Config!
 

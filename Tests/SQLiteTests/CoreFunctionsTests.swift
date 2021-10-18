@@ -1,6 +1,7 @@
 import XCTest
 @testable import SQLite
 
+// swiftlint:disable all
 class CoreFunctionsTests : XCTestCase {
 
     func test_round_wrapsDoubleExpressionsWithRoundFunction() {

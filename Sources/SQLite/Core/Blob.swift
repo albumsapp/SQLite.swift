@@ -22,6 +22,7 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
 public struct Blob {
 
     public let bytes: [UInt8]

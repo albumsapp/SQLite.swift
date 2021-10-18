@@ -1,6 +1,7 @@
 import XCTest
 @testable import SQLite
 
+// swiftlint:disable all
 class DateAndTimeFunctionsTests : XCTestCase {
 
     func test_date() {

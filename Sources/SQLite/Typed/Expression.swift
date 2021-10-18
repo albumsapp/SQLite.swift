@@ -22,6 +22,8 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
+
 public protocol ExpressionType : Expressible { // extensions cannot have inheritance clauses
 
     associatedtype UnderlyingType = Void

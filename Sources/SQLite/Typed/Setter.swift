@@ -22,6 +22,7 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
 precedencegroup ColumnAssignment {
     associativity: left
     assignment: true

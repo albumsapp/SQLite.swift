@@ -1,6 +1,7 @@
 import XCTest
 import SQLite
 
+// swiftlint:disable all
 class RTreeTests : XCTestCase {
 
     func test_create_onVirtualTable_withRTree_createVirtualTableExpression() {

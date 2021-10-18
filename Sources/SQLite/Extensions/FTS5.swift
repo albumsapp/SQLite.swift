@@ -22,6 +22,8 @@
 // THE SOFTWARE.
 //
 
+// swiftlint:disable all
+
 extension Module {
     public static func FTS5(_ config: FTS5Config) -> Module {
         return Module(name: "fts5", arguments: config.arguments())
