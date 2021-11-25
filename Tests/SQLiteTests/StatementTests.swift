@@ -2,14 +2,14 @@ import XCTest
 import SQLite
 
 // swiftlint:disable all
-class StatementTests : SQLiteTestCase {
-    override func setUp() {
-        super.setUp()
-        CreateUsersTable()
+class StatementTests: SQLiteTestCase {
+    override func setUpWithError() throws {
+        try super.setUpWithError()
+        try createUsersTable()
     }
 
     func test_cursor_to_blob() {
-        try! InsertUsers("alice")
+        try! insertUsers("alice")
         let statement = try! db.prepare("SELECT email FROM users")
         XCTAssert(try! statement.step())
         let blob = statement.row[0] as Blob
