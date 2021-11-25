@@ -26,26 +26,33 @@ class FTS4Tests : XCTestCase {
             virtualTable.create(.FTS4(tokenize: .Unicode61(removeDiacritics: false)))
         )
         XCTAssertEqual(
-            "CREATE VIRTUAL TABLE \"virtual_table\" USING fts4(tokenize=unicode61 \"removeDiacritics=1\" \"tokenchars=.\" \"separators=X\")",
-            virtualTable.create(.FTS4(tokenize: .Unicode61(removeDiacritics: true, tokenchars: ["."], separators: ["X"])))
+            """
+            CREATE VIRTUAL TABLE \"virtual_table\" USING fts4(tokenize=unicode61 \"removeDiacritics=1\"
+             \"tokenchars=.\" \"separators=X\")
+            """.replacingOccurrences(of: "\n", with: ""),
+            virtualTable.create(.FTS4(tokenize: .Unicode61(removeDiacritics: true,
+                                                           tokenchars: ["."], separators: ["X"])))
         )
     }
 
     func test_match_onVirtualTableAsExpression_compilesMatchExpression() {
-        AssertSQL("(\"virtual_table\" MATCH 'string')", virtualTable.match("string") as Expression<Bool>)
-        AssertSQL("(\"virtual_table\" MATCH \"string\")", virtualTable.match(string) as Expression<Bool>)
-        AssertSQL("(\"virtual_table\" MATCH \"stringOptional\")", virtualTable.match(stringOptional) as Expression<Bool?>)
+        assertSQL("(\"virtual_table\" MATCH 'string')", virtualTable.match("string") as Expression<Bool>)
+        assertSQL("(\"virtual_table\" MATCH \"string\")", virtualTable.match(string) as Expression<Bool>)
+        assertSQL("(\"virtual_table\" MATCH \"stringOptional\")", virtualTable.match(stringOptional) as Expression<Bool?>)
     }
 
     func test_match_onVirtualTableAsQueryType_compilesMatchExpression() {
-        AssertSQL("SELECT * FROM \"virtual_table\" WHERE (\"virtual_table\" MATCH 'string')", virtualTable.match("string") as QueryType)
-        AssertSQL("SELECT * FROM \"virtual_table\" WHERE (\"virtual_table\" MATCH \"string\")", virtualTable.match(string) as QueryType)
-        AssertSQL("SELECT * FROM \"virtual_table\" WHERE (\"virtual_table\" MATCH \"stringOptional\")", virtualTable.match(stringOptional) as QueryType)
+        assertSQL("SELECT * FROM \"virtual_table\" WHERE (\"virtual_table\" MATCH 'string')",
+                  virtualTable.match("string") as QueryType)
+        assertSQL("SELECT * FROM \"virtual_table\" WHERE (\"virtual_table\" MATCH \"string\")",
+                  virtualTable.match(string) as QueryType)
+        assertSQL("SELECT * FROM \"virtual_table\" WHERE (\"virtual_table\" MATCH \"stringOptional\")",
+                  virtualTable.match(stringOptional) as QueryType)
     }
 
 }
 
-class FTS4ConfigTests : XCTestCase {
+class FTS4ConfigTests: XCTestCase {
     var config: FTS4Config!
 
     override func setUp() {
@@ -109,7 +116,10 @@ class FTS4ConfigTests : XCTestCase {
 
     func test_tokenizer_unicode61_with_options() {
         XCTAssertEqual(
-            "CREATE VIRTUAL TABLE \"virtual_table\" USING fts4(tokenize=unicode61 \"removeDiacritics=1\" \"tokenchars=.\" \"separators=X\")",
+            """
+            CREATE VIRTUAL TABLE \"virtual_table\" USING fts4(tokenize=unicode61 \"removeDiacritics=1\"
+             \"tokenchars=.\" \"separators=X\")
+            """.replacingOccurrences(of: "\n", with: ""),
             sql(config.tokenizer(.Unicode61(removeDiacritics: true, tokenchars: ["."], separators: ["X"]))))
     }
 
@@ -157,7 +167,11 @@ class FTS4ConfigTests : XCTestCase {
 
     func test_config_all() {
         XCTAssertEqual(
-            "CREATE VIRTUAL TABLE \"virtual_table\" USING fts4(\"int\", \"string\", \"date\", tokenize=porter, prefix=\"2,4\", content=\"table\", notindexed=\"string\", notindexed=\"date\", languageid=\"lid\", matchinfo=\"fts3\", order=\"desc\")",
+            """
+            CREATE VIRTUAL TABLE \"virtual_table\" USING fts4(\"int\", \"string\", \"date\",
+             tokenize=porter, prefix=\"2,4\", content=\"table\", notindexed=\"string\", notindexed=\"date\",
+             languageid=\"lid\", matchinfo=\"fts3\", order=\"desc\")
+            """.replacingOccurrences(of: "\n", with: ""),
             sql(config
                 .tokenizer(.Porter)
                 .column(int)
@@ -172,6 +186,6 @@ class FTS4ConfigTests : XCTestCase {
     }
 
     func sql(_ config: FTS4Config) -> String {
-        return virtualTable.create(.FTS4(config))
+        virtualTable.create(.FTS4(config))
     }
 }

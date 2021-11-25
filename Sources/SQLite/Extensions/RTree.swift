@@ -25,8 +25,9 @@
 // swiftlint:disable all
 
 extension Module {
-
-    public static func RTree<T : Value, U : Value>(_ primaryKey: Expression<T>, _ pairs: (Expression<U>, Expression<U>)...) -> Module where T.Datatype == Int64, U.Datatype == Double {
+    public static func RTree<T: Value, U: Value>(_ primaryKey: Expression<T>,
+                                                 _ pairs: (Expression<U>, Expression<U>)...)
+                    -> Module where T.Datatype == Int64, U.Datatype == Double {
         var arguments: [Expressible] = [primaryKey]
 
         for pair in pairs {
@@ -35,5 +36,4 @@ extension Module {
 
         return Module(name: "rtree", arguments: arguments)
     }
-
 }
